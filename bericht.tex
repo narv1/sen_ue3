@@ -53,7 +53,7 @@
 \date{\today}
 \author{Stefan Hermeter \texttt{\href{mailto:stefan.hermeter@gmx.at}{stefan.hermeter@gmx.at}}\\
   Klasse: 5ABETi\\
-  Schuljahr: 2015/16, 28. November}
+  Schuljahr: 2015/16}
 \pagenumbering{gobble}
 \maketitle
 \pagenumbering{roman}
@@ -70,11 +70,11 @@ Aufgabe dieser Übung ist das Einbauen von 'getopt' in die 1.Übung. Es soll jed
 Die Bibliothek 'myString.h' soll strlength, strmirror, strsearch, strreplace und strsubstr enthalten. Diese sollen die Länge des Strings wiedergeben. Den String gespiegelt wiedergeben. Strsearch soll ein Wort im String suchen welches über die Argumenteneingabe gespeichert wird. Strreplace soll ein Wort im angegebenen String ersetzen und 'strsubstr' soll aus jenem String ein Wort kopieren und abspeichern.
 
 %% Programmablauf
-\section{Programmablaufplan: 'getopt' 'myString.h'}
+\section{Programmablaufplan: getopt, myString.}
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{images/Programmablauf.eps}
-  \caption{Programmablauf 'myString.h'}
+  \caption{Programmablauf getopt, myString.h}
   \label{fig:digraph}
 \end{figure}
 
@@ -96,11 +96,11 @@ Die Bibliothek 'myString.h' soll strlength, strmirror, strsearch, strreplace und
 \item myString.h
 \end{itemize}
 
-\subsection{Funktionen: 'myString.h}
+\subsection{Funktionen: myString.h}
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{images/strlength.png}
-  \caption{strlength}
+  \caption{Funktion: strlength}
   \label{fig:digraph}
 \end{figure}
 Die Funktion 'strlength' wurde mit einer einfachen For-schleife gelöst, welche über eine variable iteriert wurde.
@@ -108,7 +108,7 @@ Die Funktion 'strlength' wurde mit einer einfachen For-schleife gelöst, welche 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{images/strmirror.png}
-  \caption{strmirror}
+  \caption{Funktion: strmirror}
   \label{fig:digraph}
 \end{figure}
 Die Funktion 'strmirror' ruft zunächst strlength auf. Der Rückgabewert gibt an wie groß das Array ist. Dann wird mit einer while-Schleife nach oben gezählt bist das Nullbyte erreicht wird.
@@ -116,7 +116,7 @@ Die Funktion 'strmirror' ruft zunächst strlength auf. Der Rückgabewert gibt an
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{images/strsearch.png}
-  \caption{strsearch}
+  \caption{Funktion: strsearch}
   \label{fig:digraph}
 \end{figure}
 Die Funktion 'strsearch' bedient sich gleich des öfteren strlength. Dies ist nötig um um Fehler vorzubeugen. Mit 'if' wird ausgeschlossen das der gesuchte String nicht größer ist als der ursprünglich String. Desweiteren wird mit dem beiden for schleifen solange nach oben gezählt bis jeder einzelne Buchstabe der beiden Strings miteinander verglichen wird. Die letzten beiden 'if'-Verzweigungen sind da um Fehler zu überprüfen bzw. die Zweite um nach einem Space zusuchen.
@@ -124,7 +124,7 @@ Die Funktion 'strsearch' bedient sich gleich des öfteren strlength. Dies ist n�
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{images/strreplace.png}
-  \caption{strreplace}
+  \caption{Funktion: strreplace}
   \label{fig:digraph}
 \end{figure}
 Die Funktion 'strreplace' bedient sich gleich am Anfang mit 'strsearch' und öfters mit 'strlength'. Dies wird benötigt da die Rückgabewerte gebraucht werden um den neuen Array zu befüllen. Die erste 'for-Schleife' füllt das neue Array bis zum gesuchten Wort auf. Die zweite 'for-Schleife' befüllt das Array mit jenem neuen Wort das eingesetzt werden will. Die dritte 'for-Schleife' befüllt das Array mit den restlichen fehlenden Zeichen.
@@ -132,14 +132,14 @@ Die Funktion 'strreplace' bedient sich gleich am Anfang mit 'strsearch' und öft
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{images/strsubstr.png}
-  \caption{strsubstr}
+  \caption{Funktion: strsubstr}
   \label{fig:digraph}
 \end{figure}
 Die Funktion 'strsubstr' überprüft im Sourcestrin ob das zu kopierende Wort vorhanden ist. Wem dem so ist kopiert es dieses in ein neues Array .
 \newpage
 
 %% Testergebnisse 
-\section{Testergebnisse}
+\section{Testergebnisse: ./test\_prog.c}
 Jede Funktion wurde 3 mal mit den selben Zeichen getestet. Es wurde darauf geachtet das Groß-, Kleinbuchstaben, Zahlen sowie Sonderzeichen enthalten sind.
 
 \subsection{Tabelle: strlength}
@@ -220,9 +220,9 @@ Jede Funktion wurde 3 mal mit den selben Zeichen getestet. Es wurde darauf geach
 \subsection{Tabelle: strreplace}
 \begin{table}[H]
   \centering
-  \begin{tabular}{|c|c|c|c|}
+  \begin{tabular}{|p{2,5cm}|p{2,5cm}|p{4cm}|p{4cm}|}
     \hline
-    Teststring & zuchendes Wort & zuersetzendes Wort & Endstring \\
+    Teststring & zusuchendes Wort & zuersetzendes Wort & Endstring \\
     \hline
     Hallo erstmal & erstmal & einandermal & Hallo einandermal \\
     \hline
