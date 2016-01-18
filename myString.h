@@ -14,7 +14,7 @@ int strlength(const char array1[], int n){
 
   // Zähler der Stringlänge
   for(i = 0; array1[i] != '\0'; i++);
-  //  i--;
+  // i--;
   return i;
 }
 
@@ -41,20 +41,34 @@ int strmirror(char array1[], int n){
 /******************************************/
 /*               strsearch                */
 /******************************************/
-int strsearch(const char sstr[], int n, const char str[]){
+int strsearch(const char sstr[], int N, const char str[]){
   //suchen auf Gleichheit eines Wortes in einem String
-  int i = 0, j = 0;
-  if(strlength(sstr, n) -1 <= strlength(str, n))
-    for(i = 0; i < n; i++)
-      for(j = 0; j < strlength(sstr, n); j++) {
-	if(str[i + j] != sstr[j])
+  int i = 0, j = 0, k = 0, l = 0;
+  l = strlength(sstr, N);
+  //j--;
+  for(i = 0; i < l; i++){
+    for(j = 0; j < l; j++){
+      printf("\n %d   %d",i+j,l);
+      if(sstr[i+j] == str[k]){
+	k++;
+	//	printf("\n %d   %d",k,l);
+	if(k == l){
+	  return 0;
+	}	
+      }
+    }
+  }/*
+  if(strlength(sstr, N)- 1 <= strlength(str, N))
+    for(i = 0; i < N; i++)
+      for(j = 0; j < strlength(sstr, N)- 1; j++) {
+	if(str[i + j] != sstr[j])   
 	  break;
-	if(sstr[j + i] == 0 || sstr[j] == 10)
-	  return i-1;
+	if(sstr[j + i] == 0 || sstr[j] == 10 || sstr[j] == 32 || sstr[j] == 8)  // 0    bzw    10
+	  return i;
       }
 
   return -1;
-}
+  }*/
 
 /******************************************/
 /*               strreplace               */
